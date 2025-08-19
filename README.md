@@ -1,15 +1,15 @@
-💻 Programación 2
-Tecnicatura Universitaria en Programación
-📍 Universidad Tecnológica Nacional
+# 💻 Programación 2  
+**Tecnicatura Universitaria en Programación**  
+📍 *Universidad Tecnológica Nacional*  
 
-✨ Estudiante
-Nombre: Cabrera Dario Ezequiel
-Comisión: M2025-10
-📂 Descripción del Repositorio
-Este repositorio almacena todas los trabajos prácticos realizados durante la cursada de Programación 1.
+## ✨ Estudiante  
+- **Nombre:** Cabrera Dario Ezequiel 
+- **Comisión:** M2025-10
 
-📌 Estructura del repositorio:
+## 📂 Descripción del Repositorio  
+Este repositorio almacena todas los trabajos prácticos realizados durante la cursada de **Programación 2**.  
 
-Cada trabajo está organizado en carpetas individuales.
-Los archivos de código fuente (.java) incluyen comentarios y estructura adecuada.
-Se busca mantener un código limpio, ordenado y bien documentado.
+📌 **Estructura del repositorio:**  
+- Cada trabajo está organizado en carpetas individuales.  
+- Los archivos de código fuente (`.java`) incluyen comentarios y estructura adecuada.  
+- Se busca mantener un código limpio, ordenado y bien documentado.

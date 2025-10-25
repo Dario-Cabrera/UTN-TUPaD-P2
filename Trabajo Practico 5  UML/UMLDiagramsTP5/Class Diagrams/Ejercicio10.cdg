@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="ClaveSeguridad" package="Ejercicio10.newpackage" visibility="public" xPosition="21.0" yPosition="148.0">
+      <Fields>
+        <Field name="codigo" type="String" visibility="private"/>
+        <Field name="ultimaModificacion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="codigo"/>
+          <Argument type="String" name="ultimaModificacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="CuentaBancaria" package="Ejercicio10.newpackage" visibility="public" xPosition="475.0" yPosition="129.0">
+      <Fields>
+        <Field name="cbu" type="String" visibility="private"/>
+        <Field name="saldo" type="double" visibility="private"/>
+        <Field name="clave" type="ClaveSeguridad" visibility="private"/>
+        <Field name="titular" type="Titular" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="cbu"/>
+          <Argument type="double" name="saldo"/>
+          <Argument type="String" name="codigoClave"/>
+          <Argument type="String" name="fechaClave"/>
+          <Argument type="Titular" name="titular"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Titular" package="Ejercicio10.newpackage" visibility="public" xPosition="623.0" yPosition="428.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="cuenta" type="CuentaBancaria" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setCuenta" returnType="void" visibility="public">
+          <Argument type="CuentaBancaria" name="cuenta"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cuenta" source="Ejercicio10.newpackage.Titular" target="Ejercicio10.newpackage.CuentaBancaria" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Ejercicio10.newpackage.Titular" target="Ejercicio10.newpackage.CuentaBancaria" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="clave" source="Ejercicio10.newpackage.CuentaBancaria" target="Ejercicio10.newpackage.ClaveSeguridad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="titular" source="Ejercicio10.newpackage.CuentaBancaria" target="Ejercicio10.newpackage.Titular" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

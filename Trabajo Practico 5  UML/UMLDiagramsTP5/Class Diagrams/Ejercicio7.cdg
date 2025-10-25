@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Conductor" package="Ejercicio7.newpackage" visibility="public" xPosition="320.0" yPosition="42.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="licencia" type="String" visibility="private"/>
+        <Field name="vehiculoAsignado" type="Vehiculo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="licencia"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setVehiculo" returnType="void" visibility="public">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Motor" package="Ejercicio7.newpackage" visibility="public" xPosition="759.0" yPosition="148.0">
+      <Fields>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="numeroSerie" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipo"/>
+          <Argument type="String" name="numeroSerie"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Vehiculo" package="Ejercicio7.newpackage" visibility="public" xPosition="320.0" yPosition="492.0">
+      <Fields>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="motor" type="Motor" visibility="private"/>
+        <Field name="conductor" type="Conductor" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="patente"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="Motor" name="motor"/>
+          <Argument type="Conductor" name="conductor"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="motor" source="Ejercicio7.newpackage.Vehiculo" target="Ejercicio7.newpackage.Motor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Ejercicio7.newpackage.Conductor" target="Ejercicio7.newpackage.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vehiculoAsignado" source="Ejercicio7.newpackage.Conductor" target="Ejercicio7.newpackage.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conductor" source="Ejercicio7.newpackage.Vehiculo" target="Ejercicio7.newpackage.Conductor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

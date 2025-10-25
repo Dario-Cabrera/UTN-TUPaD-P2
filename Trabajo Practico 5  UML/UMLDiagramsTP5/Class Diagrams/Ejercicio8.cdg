@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Documento" package="Ejercicio8.newpackage" visibility="public" xPosition="122.0" yPosition="222.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="contenido" type="String" visibility="private"/>
+        <Field name="firma" type="FirmaDigital" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="contenido"/>
+          <Argument type="String" name="hash"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="Usuario" name="usuarioFirma"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="FirmaDigital" package="Ejercicio8.newpackage" visibility="public" xPosition="373.0" yPosition="438.0">
+      <Fields>
+        <Field name="codigoHash" type="String" visibility="private"/>
+        <Field name="fecha" type="String" visibility="private"/>
+        <Field name="usuario" type="Usuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="codigoHash"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Usuario" package="Ejercicio8.newpackage" visibility="public" xPosition="707.0" yPosition="222.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="usuario" source="Ejercicio8.newpackage.FirmaDigital" target="Ejercicio8.newpackage.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="firma" source="Ejercicio8.newpackage.Documento" target="Ejercicio8.newpackage.FirmaDigital" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

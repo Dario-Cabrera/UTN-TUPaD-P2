@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Foto" package="Ejercicio1.newpackage" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="imagen" type="String" visibility="private"/>
+        <Field name="formato" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="imagen"/>
+          <Argument type="String" name="formato"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Pasaporte" package="Ejercicio1.newpackage" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="fechaEmision" type="String" visibility="private"/>
+        <Field name="foto" type="Foto" visibility="private"/>
+        <Field name="titular" type="Titular" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="numero"/>
+          <Argument type="String" name="fechaEmision"/>
+          <Argument type="String" name="imagenFoto"/>
+          <Argument type="String" name="formatoFoto"/>
+          <Argument type="Titular" name="titular"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Titular" package="Ejercicio1.newpackage" visibility="public" xPosition="473.0" yPosition="432.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="pasaporte" type="Pasaporte" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setPasaporte" returnType="void" visibility="public">
+          <Argument type="Pasaporte" name="pasaporte"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Ejercicio1.newpackage.Titular" target="Ejercicio1.newpackage.Pasaporte" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="foto" source="Ejercicio1.newpackage.Pasaporte" target="Ejercicio1.newpackage.Foto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="titular" source="Ejercicio1.newpackage.Pasaporte" target="Ejercicio1.newpackage.Titular" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pasaporte" source="Ejercicio1.newpackage.Titular" target="Ejercicio1.newpackage.Pasaporte" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

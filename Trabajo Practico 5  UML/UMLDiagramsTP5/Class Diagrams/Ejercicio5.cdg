@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Computadora" package="Ejercicio5.newpackage" visibility="public" xPosition="46.0" yPosition="39.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="numeroSerie" type="String" visibility="private"/>
+        <Field name="placaMadre" type="PlacaMadre" visibility="private"/>
+        <Field name="propietario" type="Propietario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="serie"/>
+          <Argument type="String" name="modPlaca"/>
+          <Argument type="String" name="chipPlaca"/>
+          <Argument type="Propietario" name="prop"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PlacaMadre" package="Ejercicio5.newpackage" visibility="public" xPosition="740.0" yPosition="58.0">
+      <Fields>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="chipset" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="chipset"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Propietario" package="Ejercicio5.newpackage" visibility="public" xPosition="197.0" yPosition="471.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="equipo" type="Computadora" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setEquipo" returnType="void" visibility="public">
+          <Argument type="Computadora" name="equipo"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="equipo" source="Ejercicio5.newpackage.Propietario" target="Ejercicio5.newpackage.Computadora" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="propietario" source="Ejercicio5.newpackage.Computadora" target="Ejercicio5.newpackage.Propietario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="placaMadre" source="Ejercicio5.newpackage.Computadora" target="Ejercicio5.newpackage.PlacaMadre" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Ejercicio5.newpackage.Propietario" target="Ejercicio5.newpackage.Computadora" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

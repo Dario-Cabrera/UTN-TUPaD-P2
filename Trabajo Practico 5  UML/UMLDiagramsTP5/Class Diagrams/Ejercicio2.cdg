@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Bateria" package="Ejercicio2.newpackage" visibility="public" xPosition="14.0" yPosition="69.0">
+      <Fields>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="capacidad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="modelo"/>
+          <Argument type="int" name="capacidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Celular" package="Ejercicio2.newpackage" visibility="public" xPosition="467.0" yPosition="41.0">
+      <Fields>
+        <Field name="imei" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="bateria" type="Bateria" visibility="private"/>
+        <Field name="usuario" type="Usuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="imei"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="Bateria" name="bateria"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Usuario" package="Ejercicio2.newpackage" visibility="public" xPosition="596.0" yPosition="570.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="celular" type="Celular" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setCelular" returnType="void" visibility="public">
+          <Argument type="Celular" name="celular"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Ejercicio2.newpackage.Usuario" target="Ejercicio2.newpackage.Celular" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="celular" source="Ejercicio2.newpackage.Usuario" target="Ejercicio2.newpackage.Celular" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuario" source="Ejercicio2.newpackage.Celular" target="Ejercicio2.newpackage.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bateria" source="Ejercicio2.newpackage.Celular" target="Ejercicio2.newpackage.Bateria" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

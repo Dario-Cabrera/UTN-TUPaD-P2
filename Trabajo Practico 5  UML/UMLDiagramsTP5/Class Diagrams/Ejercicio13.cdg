@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="CodigoQR" package="Ejercicio13.newpackage" visibility="public" xPosition="172.0" yPosition="94.0">
+      <Fields>
+        <Field name="valor" type="String" visibility="private"/>
+        <Field name="usuario" type="Usuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="valor"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GeneradorQR" package="Ejercicio13.newpackage" visibility="public" xPosition="569.0" yPosition="94.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="generar" returnType="CodigoQR" visibility="public">
+          <Argument type="String" name="valor"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="Ejercicio13.newpackage" visibility="public" xPosition="414.0" yPosition="278.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Ejercicio13.newpackage.GeneradorQR" target="Ejercicio13.newpackage.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuario" source="Ejercicio13.newpackage.CodigoQR" target="Ejercicio13.newpackage.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

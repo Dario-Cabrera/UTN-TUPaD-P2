@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="EditorVideo" package="Ejercicio14.newpackage" visibility="public" xPosition="155.0" yPosition="122.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="exportar" returnType="Render" visibility="public">
+          <Argument type="String" name="formato"/>
+          <Argument type="Proyecto" name="proyecto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Proyecto" package="Ejercicio14.newpackage" visibility="public" xPosition="602.0" yPosition="122.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="duracionMin" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="duracionMin"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Render" package="Ejercicio14.newpackage" visibility="public" xPosition="403.0" yPosition="341.0">
+      <Fields>
+        <Field name="formato" type="String" visibility="private"/>
+        <Field name="proyecto" type="Proyecto" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="formato"/>
+          <Argument type="Proyecto" name="proyecto"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Ejercicio14.newpackage.EditorVideo" target="Ejercicio14.newpackage.Render" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="proyecto" source="Ejercicio14.newpackage.Render" target="Ejercicio14.newpackage.Proyecto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

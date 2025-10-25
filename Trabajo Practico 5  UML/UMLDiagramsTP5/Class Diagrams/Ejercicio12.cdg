@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Calculadora" package="Ejercicio12.newpackage" visibility="public" xPosition="277.0" yPosition="135.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcular" returnType="void" visibility="public">
+          <Argument type="Impuesto" name="impuesto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Contribuyente" package="Ejercicio12.newpackage" visibility="public" xPosition="619.0" yPosition="135.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="cuil" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="cuil"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Impuesto" package="Ejercicio12.newpackage" visibility="public" xPosition="402.0" yPosition="327.0">
+      <Fields>
+        <Field name="monto" type="double" visibility="private"/>
+        <Field name="contribuyente" type="Contribuyente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="monto"/>
+          <Argument type="Contribuyente" name="contribuyente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMonto" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="contribuyente" source="Ejercicio12.newpackage.Impuesto" target="Ejercicio12.newpackage.Contribuyente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Ejercicio12.newpackage.Calculadora" target="Ejercicio12.newpackage.Impuesto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

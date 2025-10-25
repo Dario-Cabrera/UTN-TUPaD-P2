@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Artista" package="Ejercicio11.newpackage" visibility="public" xPosition="131.0" yPosition="29.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="genero"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Cancion" package="Ejercicio11.newpackage" visibility="public" xPosition="499.0" yPosition="20.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="artista" type="Artista" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="Artista" name="artista"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTitulo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Reproductor" package="Ejercicio11.newpackage" visibility="public" xPosition="505.0" yPosition="264.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="reproducir" returnType="void" visibility="public">
+          <Argument type="Cancion" name="cancion"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Ejercicio11.newpackage.Reproductor" target="Ejercicio11.newpackage.Cancion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="artista" source="Ejercicio11.newpackage.Cancion" target="Ejercicio11.newpackage.Artista" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Banco" package="Ejercicio4.newpackage" visibility="public" xPosition="131.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="cuit" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="cuit"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Cliente" package="Ejercicio4.newpackage" visibility="public" xPosition="517.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="tarjeta" type="TarjetaDeCredito" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTarjeta" returnType="void" visibility="public">
+          <Argument type="TarjetaDeCredito" name="tarjeta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TarjetaDeCredito" package="Ejercicio4.newpackage" visibility="public" xPosition="392.0" yPosition="454.0">
+      <Fields>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="fechaVencimiento" type="String" visibility="private"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="banco" type="Banco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="num"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Banco" name="banco"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cliente" source="Ejercicio4.newpackage.TarjetaDeCredito" target="Ejercicio4.newpackage.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tarjeta" source="Ejercicio4.newpackage.Cliente" target="Ejercicio4.newpackage.TarjetaDeCredito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Ejercicio4.newpackage.Cliente" target="Ejercicio4.newpackage.TarjetaDeCredito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="banco" source="Ejercicio4.newpackage.TarjetaDeCredito" target="Ejercicio4.newpackage.Banco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

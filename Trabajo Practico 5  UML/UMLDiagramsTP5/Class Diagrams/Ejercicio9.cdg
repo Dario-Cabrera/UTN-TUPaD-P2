@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="CitaMedica" package="Ejercicio9.newpackage" visibility="public" xPosition="57.0" yPosition="83.0">
+      <Fields>
+        <Field name="fecha" type="String" visibility="private"/>
+        <Field name="hora" type="String" visibility="private"/>
+        <Field name="paciente" type="Paciente" visibility="private"/>
+        <Field name="profesional" type="Profesional" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="Profesional" name="profesional"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Paciente" package="Ejercicio9.newpackage" visibility="public" xPosition="159.0" yPosition="345.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="obraSocial" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="obraSocial"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Profesional" package="Ejercicio9.newpackage" visibility="public" xPosition="690.0" yPosition="102.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="especialidad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="especialidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="profesional" source="Ejercicio9.newpackage.CitaMedica" target="Ejercicio9.newpackage.Profesional" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paciente" source="Ejercicio9.newpackage.CitaMedica" target="Ejercicio9.newpackage.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
